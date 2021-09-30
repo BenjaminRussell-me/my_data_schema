@@ -1,0 +1,28 @@
+type Tag {
+title: String!
+projects: [Project] @relation
+thoughts: [Thought] @relation
+}
+
+type Query {
+   allProjects: [Project!] @index(name: "all_projects")
+   allThoughts: [Thought!] @index(name: "all_thoughts")
+}
+
+type Project {
+   title: String!
+   content: String!
+   tags: [Tag] @relation
+   date: Date
+}
+type Thought {
+   title: String!
+   content: String!
+   tags: [Tag] @relation
+   date: Date
+}
+type Contact {
+   name: String!
+   email: String 
+   number: String 
+}
