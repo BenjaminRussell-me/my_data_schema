@@ -36,8 +36,18 @@ type Resume {
 	job: String!
 	img: String!
 	contact: Contact!
-	experience: String!
-	skills: String!
-	Education: String!
-	About: String!
+	experience: BasicContent!
+	skills: BasicContent!
+	Education: BasicContent!
+	About: BasicContent!
+}
+
+type BasicContent {
+discription: String!
+content: [String!]
+}
+
+type WebsiteSection {
+	discription: String!
+	content: BasicContent
 }
